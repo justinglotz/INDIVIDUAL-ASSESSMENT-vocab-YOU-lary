@@ -1,5 +1,6 @@
 import { signOut } from '../utils/auth';
-
+import getEntries from '../api/entryData';
+import showEntries from '../pages/entries';
 // NAVIGATION EVENTS
 const navigationEvents = () => {
   // LOGOUT BUTTON
@@ -8,8 +9,7 @@ const navigationEvents = () => {
 
   document.querySelector('#all-entries')
     .addEventListener('click', () => {
-      // getEntries().then(showEntries);
-      console.warn('Get entries then show entries');
+      getEntries().then(showEntries);
     });
 
   document.querySelector('#create-entry')
