@@ -37,7 +37,36 @@ const createEntry = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET A SINGLE ENTRY
+const getSingleEntry = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/entries/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+// UPDATE ENTRY
+const updateEntry = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/entries/${payload.firebaseKey}.json`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
+});
+
 export {
   getEntries,
-  createEntry
+  createEntry,
+  updateEntry,
+  getSingleEntry
 };
