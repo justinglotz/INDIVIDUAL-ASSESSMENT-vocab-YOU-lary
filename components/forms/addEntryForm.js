@@ -2,7 +2,7 @@ import clearDom from '../../utils/clearDom';
 import renderToDOM from '../../utils/renderToDom';
 import selectCategory from './selectCategory';
 
-const addEntryForm = (obj) => {
+const addEntryForm = (obj, user) => {
   clearDom();
   const domString = `
   <form id="${obj.firebaseKey ? `update-entry--${obj.firebaseKey}` : 'submit-entry'}" class="mb-4">
@@ -22,7 +22,7 @@ const addEntryForm = (obj) => {
   </form>`;
 
   renderToDOM('#form-container', domString);
-  selectCategory(`${obj.categoryId || ''}`);
+  selectCategory(`${obj.category || ''}`, user);
 };
 
 export default addEntryForm;

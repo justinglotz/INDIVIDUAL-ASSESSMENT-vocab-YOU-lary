@@ -2,21 +2,22 @@ import { signOut } from '../utils/auth';
 import { getEntries } from '../api/entryData';
 import showEntries from '../pages/entries';
 import addEntryForm from '../components/forms/addEntryForm';
+import addCategoryForm from '../components/forms/addCategoryForm';
 
 // NAVIGATION EVENTS
-const navigationEvents = () => {
+const navigationEvents = (user) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
   document.querySelector('#all-entries')
     .addEventListener('click', () => {
-      getEntries().then(showEntries);
+      getEntries(user.uid).then(showEntries);
     });
 
   document.querySelector('#create-entry')
     .addEventListener('click', () => {
-      addEntryForm({});
+      addEntryForm({}, user);
     });
 
   document.querySelector('#community')
@@ -26,7 +27,7 @@ const navigationEvents = () => {
 
   document.querySelector('#create-category')
     .addEventListener('click', () => {
-      console.warn('Go to create a category form');
+      addCategoryForm();
     });
 };
 
