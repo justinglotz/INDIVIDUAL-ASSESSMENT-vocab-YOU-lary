@@ -1,6 +1,8 @@
 import { signOut } from '../utils/auth';
-import getEntries from '../api/entryData';
+import { getEntries } from '../api/entryData';
 import showEntries from '../pages/entries';
+import addEntryForm from '../components/forms/addEntryForm';
+
 // NAVIGATION EVENTS
 const navigationEvents = () => {
   // LOGOUT BUTTON
@@ -14,7 +16,7 @@ const navigationEvents = () => {
 
   document.querySelector('#create-entry')
     .addEventListener('click', () => {
-      console.warn('Go to create entry form');
+      addEntryForm({});
     });
 
   document.querySelector('#community')
