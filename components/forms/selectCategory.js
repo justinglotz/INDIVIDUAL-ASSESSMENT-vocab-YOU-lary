@@ -1,15 +1,19 @@
 // import getCategories from '../../api/categoryData';
+import getCategories from '../../api/categoryData';
 import renderToDOM from '../../utils/renderToDom';
 
 const selectCategory = () => {
-  const domString = `<label for="category">Select a Category</label>
+  let domString = `<label for="category">Select a Category</label>
     <select class="form-control" id="category_id" required>
-    <option value="" selected>Select a Category</option>
-    <option value="Tech">Tech</option>
-    <option value="Finance">Finance</option>
-    </select>`;
-
-  renderToDOM('#select-category', domString);
+    <option value="" selected>Select a Category</option>`;
+  getCategories().then((categoriesArray) => {
+    categoriesArray.forEach((category) => {
+      domString += `
+      <option value="${category.categoryName}">${category.categoryName}</option>`;
+    });
+    domString += '</select>';
+    renderToDOM('#select-category', domString);
+  });
 };
 
 export default selectCategory;
