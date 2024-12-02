@@ -2,6 +2,7 @@ import addEntryForm from '../components/forms/addEntryForm';
 import { deleteEntry, getEntries, getSingleEntry } from '../api/entryData';
 import showEntries from '../pages/entries';
 import showFilterButtons from '../components/buttons/filterButtons';
+import alphabeticalSort from '../utils/alphabeticalSort';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -33,6 +34,10 @@ const domEvents = (user) => {
     // Click event for 'all entries' button
     if (e.target.id.includes('all-btn')) {
       getEntries(user.uid).then(showEntries);
+    }
+    // Click event for 'sort a-z' button
+    if (e.target.id.includes('alphabetical-sort')) {
+      getEntries(user.uid).then(alphabeticalSort).then(showEntries);
     }
   });
 };
