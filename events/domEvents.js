@@ -1,6 +1,7 @@
 import addEntryForm from '../components/forms/addEntryForm';
 import { deleteEntry, getEntries, getSingleEntry } from '../api/entryData';
 import showEntries from '../pages/entries';
+import showFilterButtons from '../components/buttons/filterButtons';
 
 const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -13,13 +14,25 @@ const domEvents = (user) => {
     if (e.target.id.includes('delete-entry')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
-        console.warn('CLICKED DELETE ENTRY', e.target.id);
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteEntry(firebaseKey).then(() => {
           getEntries(user.uid).then(showEntries);
         });
       }
+    }
+    // Click event for filter buttons
+    if (e.target.id.includes('filter-btn')) {
+      const buttonText = e.target.innerHTML;
+      getEntries(user.uid).then((entries) => {
+        const filteredEntries = entries.filter((entry) => entry.category === buttonText);
+        showEntries(filteredEntries);
+        showFilterButtons(entries);
+      });
+    }
+    // Click event for 'all entries' button
+    if (e.target.id.includes('all-btn')) {
+      getEntries(user.uid).then(showEntries);
     }
   });
 };
