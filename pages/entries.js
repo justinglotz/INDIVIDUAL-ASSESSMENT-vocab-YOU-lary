@@ -1,8 +1,11 @@
 import renderToDOM from '../utils/renderToDom';
 import clearDom from '../utils/clearDom';
+import showFilterButtons from '../components/buttons/filterButtons';
 
 const showEntries = (array) => {
   clearDom();
+
+  showFilterButtons(array);
 
   let domString = '';
   array.forEach((item) => {

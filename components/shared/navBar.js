@@ -19,10 +19,10 @@ const navBar = () => {
               <a class="nav-link" href="#" id="create-entry">Create Entry</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="community">Community</a>
+            <a class="nav-link" href="#" id="create-category">Create Category</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="create-category">Create Category</a>
+              <a class="nav-link" href="#" id="community">Community</a>
             </li>
             <li>
             <input
