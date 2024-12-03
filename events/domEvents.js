@@ -1,6 +1,6 @@
 import addEntryForm from '../components/forms/addEntryForm';
 import { deleteEntry, getEntries, getSingleEntry } from '../api/entryData';
-import showEntries from '../pages/entries';
+import { showEntries } from '../pages/entries';
 import showFilterButtons from '../components/buttons/filterButtons';
 import alphabeticalSort from '../utils/alphabeticalSort';
 

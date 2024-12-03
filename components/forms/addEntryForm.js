@@ -15,8 +15,11 @@ const addEntryForm = (obj, user) => {
         <label for="definition">Definition</label>
         <textarea class="form-control" placeholder="Definition" id="definition" style="height: 100px">${obj.definition || ''}</textarea>
       </div>
-    <div class="form-group" id="select-category">
-    </div>
+      <div class="form-group" id="select-category">
+      </div>
+      <div class="form-group">
+          <input type="checkbox" id="public">Public</input>
+        </div>
     <button type="submit" class="btn btn-primary">Submit Entry
     </button>
   </form>`;

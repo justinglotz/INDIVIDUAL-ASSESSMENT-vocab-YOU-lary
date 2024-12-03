@@ -5,7 +5,7 @@ import formEvents from '../events/formEvents';
 import navigationEvents from '../events/navigationEvents';
 import domEvents from '../events/domEvents';
 import { getEntries } from '../api/entryData';
-import showEntries from '../pages/entries';
+import { showEntries } from '../pages/entries';
 
 const startApp = (user) => {
   domBuilder(user);

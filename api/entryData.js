@@ -1,4 +1,4 @@
-import showEntries from '../pages/entries';
+import { showEntries } from '../pages/entries';
 import client from '../utils/client';
 
 // API CALLS FOR VOCAB ENTRIES
@@ -6,8 +6,27 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // GET ALL ENTRIES
-const getEntries = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/entries.json`, {
+const getEntries = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/entries.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'applications/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
+// GET PUBLIC ENTRIES
+const getPublicEntries = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/entries.json?orderBy="public"&equalTo=true`, {
     method: 'GET',
     headers: {
       'Content-Type': 'applications/json',
@@ -93,5 +112,6 @@ export {
   deleteEntry,
   updateEntry,
   getSingleEntry,
-  searchEntries
+  searchEntries,
+  getPublicEntries
 };
