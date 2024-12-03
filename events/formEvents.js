@@ -31,6 +31,7 @@ const formEvents = (user) => {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
         category: document.querySelector('#category_id').value,
+        public: document.querySelector('#public').checked,
         submitTime: Date.now(),
         firebaseKey,
       };
