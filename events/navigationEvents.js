@@ -1,5 +1,5 @@
 import { signOut } from '../utils/auth';
-import { getEntries } from '../api/entryData';
+import { getEntries, searchEntries } from '../api/entryData';
 import showEntries from '../pages/entries';
 import addEntryForm from '../components/forms/addEntryForm';
 import addCategoryForm from '../components/forms/addCategoryForm';
@@ -29,6 +29,10 @@ const navigationEvents = (user) => {
     .addEventListener('click', () => {
       addCategoryForm();
     });
+
+  document.querySelector('#search').addEventListener('keyup', () => {
+    searchEntries(user);
+  });
 };
 
 export default navigationEvents;

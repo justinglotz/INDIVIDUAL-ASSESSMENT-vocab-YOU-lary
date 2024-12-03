@@ -1,3 +1,4 @@
+import showEntries from '../pages/entries';
 import client from '../utils/client';
 
 // API CALLS FOR VOCAB ENTRIES
@@ -77,10 +78,20 @@ const updateEntry = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// SEARCH ENTRIES
+const searchEntries = (user) => {
+  const searchValue = document.querySelector('#search').value.toLowerCase();
+  getEntries(user.uid).then((entries) => {
+    const filteredEntries = entries.filter((entry) => entry.title.toLowerCase().includes(searchValue));
+    showEntries(filteredEntries);
+  });
+};
+
 export {
   getEntries,
   createEntry,
   deleteEntry,
   updateEntry,
-  getSingleEntry
+  getSingleEntry,
+  searchEntries
 };
