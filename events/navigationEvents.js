@@ -1,6 +1,6 @@
 import { signOut } from '../utils/auth';
-import { getEntries } from '../api/entryData';
-import showEntries from '../pages/entries';
+import { getEntries, getPublicEntries, searchEntries } from '../api/entryData';
+import { showEntries, showPublicEntries } from '../pages/entries';
 import addEntryForm from '../components/forms/addEntryForm';
 import addCategoryForm from '../components/forms/addCategoryForm';
 
@@ -22,13 +22,17 @@ const navigationEvents = (user) => {
 
   document.querySelector('#community')
     .addEventListener('click', () => {
-      console.warn('Community tab');
+      getPublicEntries().then(showPublicEntries);
     });
 
   document.querySelector('#create-category')
     .addEventListener('click', () => {
       addCategoryForm();
     });
+
+  document.querySelector('#search').addEventListener('keyup', () => {
+    searchEntries(user);
+  });
 };
 
 export default navigationEvents;

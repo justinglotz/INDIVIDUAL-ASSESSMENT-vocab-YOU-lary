@@ -1,6 +1,6 @@
 import { createCategory, updateCategory } from '../api/categoryData';
 import { createEntry, getEntries, updateEntry } from '../api/entryData';
-import showEntries from '../pages/entries';
+import { showEntries } from '../pages/entries';
 
 // FORM EVENT FOR CREATING AN ENTRY
 const formEvents = (user) => {
@@ -12,6 +12,7 @@ const formEvents = (user) => {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
         category: document.querySelector('#category_id').value,
+        public: document.querySelector('#public').checked,
         submitTime: Date.now(),
         uid: `${user.uid}`
       };
