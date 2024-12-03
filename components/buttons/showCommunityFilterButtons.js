@@ -4,9 +4,14 @@ const showCommunityFilterButtons = (array) => {
   let filterBtnString = `
   <button class="btn btn-success filter-btn btn-lg mb-4" id="all-community-btn">All Entries</button>
   <button class="btn btn-success filter-btn btn-lg mb-4" id="alphabetical-sort-community-btn">Sort A-Z</button>`;
+  const seen = new Set();
   array.forEach((item) => {
+    if (seen.has(item)) {
+      return;
+    }
     filterBtnString += `
     <button class="btn btn-success filter-btn btn-lg mb-4" id="filter-community-btn--${item.category}">${item.category}</button>`;
+    seen.add(item);
   });
   renderToDOM('#add-button', filterBtnString);
 };
