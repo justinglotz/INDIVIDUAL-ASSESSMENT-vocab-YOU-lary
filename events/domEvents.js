@@ -1,7 +1,8 @@
 import addEntryForm from '../components/forms/addEntryForm';
-import { deleteEntry, getEntries, getSingleEntry } from '../api/entryData';
-import { showEntries } from '../pages/entries';
-import showFilterButtons from '../components/buttons/filterButtons';
+import {
+  deleteEntry, getEntries, getPublicEntries, getSingleEntry
+} from '../api/entryData';
+import { showEntries, showPublicEntries } from '../pages/entries';
 import alphabeticalSort from '../utils/alphabeticalSort';
 
 const domEvents = (user) => {
@@ -28,7 +29,6 @@ const domEvents = (user) => {
       getEntries(user.uid).then((entries) => {
         const filteredEntries = entries.filter((entry) => entry.category === buttonText);
         showEntries(filteredEntries);
-        showFilterButtons(entries);
       });
     }
     // Click event for 'all entries' button
@@ -36,8 +36,24 @@ const domEvents = (user) => {
       getEntries(user.uid).then(showEntries);
     }
     // Click event for 'sort a-z' button
-    if (e.target.id.includes('alphabetical-sort')) {
+    if (e.target.id.includes('alphabetical-sort-btn')) {
       getEntries(user.uid).then(alphabeticalSort).then(showEntries);
+    }
+    // Click event for 'all entries' button on the community tab
+    if (e.target.id.includes('all-community-btn')) {
+      getPublicEntries().then((array) => showPublicEntries(array, user));
+    }
+    // Click event for 'sort a-z' button on the community tab
+    if (e.target.id.includes('alphabetical-sort-community-btn')) {
+      getPublicEntries().then(alphabeticalSort).then((array) => showPublicEntries(array, user));
+    }
+    // Click event for filter buttons on the community tab
+    if (e.target.id.includes('filter-community-btn')) {
+      const buttonText = e.target.innerHTML;
+      getPublicEntries().then((entries) => {
+        const filteredEntries = entries.filter((entry) => entry.category === buttonText);
+        showPublicEntries(filteredEntries, user);
+      });
     }
   });
 };

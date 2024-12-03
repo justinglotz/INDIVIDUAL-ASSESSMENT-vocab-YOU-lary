@@ -4,14 +4,9 @@ const showFilterButtons = (array) => {
   let filterBtnString = `
   <button class="btn btn-success filter-btn btn-lg mb-4" id="all-btn">All Entries</button>
   <button class="btn btn-success filter-btn btn-lg mb-4" id="alphabetical-sort-btn">Sort A-Z</button>`;
-  const seen = new Set();
   array.forEach((item) => {
-    if (seen.has(item.category)) {
-      return;
-    }
     filterBtnString += `
-    <button class="btn btn-success filter-btn btn-lg mb-4" id="filter-btn--${item.category}">${item.category}</button>`;
-    seen.add(item.category);
+    <button class="btn btn-success filter-btn btn-lg mb-4" id="filter-btn--${item.categoryName}">${item.categoryName}</button>`;
   });
   renderToDOM('#add-button', filterBtnString);
 };

@@ -18,7 +18,7 @@ const addEntryForm = (obj, user) => {
       <div class="form-group" id="select-category">
       </div>
       <div class="form-group">
-          <input type="checkbox" id="public">Public</input>
+          <input type="checkbox" id="public" ${obj.public ? 'checked' : ''}>Public</input>
         </div>
     <button type="submit" class="btn btn-primary">Submit Entry
     </button>
