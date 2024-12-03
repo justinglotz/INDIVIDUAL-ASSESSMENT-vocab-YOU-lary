@@ -1,6 +1,7 @@
-import { createCategory, updateCategory } from '../api/categoryData';
+import { createCategory, updateCategory, getCategories } from '../api/categoryData';
 import { createEntry, getEntries, updateEntry } from '../api/entryData';
 import { showEntries } from '../pages/entries';
+import showFilterButtons from '../components/buttons/filterButtons';
 
 // FORM EVENT FOR CREATING AN ENTRY
 const formEvents = (user) => {
@@ -20,6 +21,7 @@ const formEvents = (user) => {
         const patchPayload = { firebaseKey: name };
 
         updateEntry(patchPayload).then(() => {
+          getCategories(user.uid).then(showFilterButtons);
           getEntries(user.uid).then(showEntries);
         });
       });
@@ -37,6 +39,7 @@ const formEvents = (user) => {
       };
 
       updateEntry(payload).then(() => {
+        getCategories(user.uid).then(showFilterButtons);
         getEntries(user.uid).then(showEntries);
       });
     }
@@ -51,6 +54,7 @@ const formEvents = (user) => {
         const patchPayload = { firebaseKey: name };
 
         updateCategory(patchPayload).then(() => {
+          getCategories(user.uid).then(showFilterButtons);
           getEntries(user.uid).then(showEntries);
         });
       });
