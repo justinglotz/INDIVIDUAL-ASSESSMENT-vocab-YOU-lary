@@ -1,5 +1,6 @@
 import addEntryForm from '../components/forms/addEntryForm';
 import {
+  createEntry,
   deleteEntry, getEntries, getPublicEntries, getSingleEntry
 } from '../api/entryData';
 import { showEntries, showPublicEntries } from '../pages/entries';
@@ -23,6 +24,12 @@ const domEvents = (user) => {
         });
       }
     }
+    // Click event for copying an entry
+    if (e.target.id.includes('copy-entry-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleEntry(firebaseKey).then((payload) => createEntry(payload));
+    }
+
     // Click event for filter buttons
     if (e.target.id.includes('filter-btn')) {
       const buttonText = e.target.innerHTML;

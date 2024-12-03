@@ -20,9 +20,6 @@ const showEntries = (array) => {
 };
 
 const showPublicEntries = (array, user) => {
-  // If the UID doesn't match the UID of the user currently logged in, Copy button renders and edit and delete buttons don't
-  // If the UID does match the UID of the user currently logged in, Edit button renders and copy button doesn't
-  // OR Render cards that are set to public and the UID doesn't match your own
   keepFilterButtonsOnDom();
   let domString = '';
   array.forEach((item) => {
