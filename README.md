@@ -25,7 +25,18 @@ An app where users can create different vocabulary entries and categories
 - [Project Board](https://github.com/users/justinglotz/projects/4)
 
 ## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
-<img width="1148" alt="Your Alt" src="your-link.png">![home screen vocab-YOU-lary](https://github.com/user-attachments/assets/d7059d70-97d3-4545-a54a-248b8b780aed)
+Login Screen![login vocab-YOU-lary](https://github.com/user-attachments/assets/e8914ab7-32ae-4aaa-9a14-e7fd7e43184a)
+Home Screen![home screen vocab-YOU-lary](https://github.com/user-attachments/assets/d7059d70-97d3-4545-a54a-248b8b780aed)
+Create Entry![create entry vocab-YOU-lary](https://github.com/user-attachments/assets/8fde1683-13f2-4aa4-a7f8-5fcd798edb25)
+Create Category![create category vocab-YOU-lary](https://github.com/user-attachments/assets/7c30bfab-ce1d-46c4-a683-dfc779baef18)
+Community Tab![community tab vocab-YOU-lary](https://github.com/user-attachments/assets/3b1f3c50-70fb-4ad1-829d-c806ea12723f)
+Search![search vocab-YOU-lary](https://github.com/user-attachments/assets/2db99ae4-264c-49ee-b84b-5479e718d3a1)
+
+
+
+
+
+
 
 
 ## Contributors
