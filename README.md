@@ -5,9 +5,6 @@ An app where users can create different vocabulary entries and categories
 
 [View App](#https://stunning-cupcake-ad077a.netlify.app/)
 
-## Get Started <!-- OPTIONAL, but doesn't hurt -->
-PLACE CODE SNIPPET HERE
-
 ## About the User <!-- This is a scaled down user persona -->
 - The ideal user for this application is a teacher
 - They have students in their classrooms that they would like to put into random groups and they have a love and passion of Harry Potter
@@ -23,9 +20,9 @@ PLACE CODE SNIPPET HERE
 https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
-- [Check out the deployed site](#your-link)
+- [Check out the deployed site](#https://stunning-cupcake-ad077a.netlify.app/)
 - [Wireframes](#your-link)
-- [Project Board](#your-link)
+- [Project Board](#https://github.com/users/justinglotz/projects/4)
 
 ## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
 PLACE CODE SNIPPET HERE
