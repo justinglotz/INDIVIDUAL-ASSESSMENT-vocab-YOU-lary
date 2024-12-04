@@ -6,12 +6,12 @@ const showCommunityFilterButtons = (array) => {
   <button class="btn btn-success filter-btn btn-lg mb-4" id="alphabetical-sort-community-btn">Sort A-Z</button>`;
   const seen = new Set();
   array.forEach((item) => {
-    if (seen.has(item)) {
+    if (seen.has(item.category)) {
       return;
     }
     filterBtnString += `
     <button class="btn btn-success filter-btn btn-lg mb-4" id="filter-community-btn--${item.category}">${item.category}</button>`;
-    seen.add(item);
+    seen.add(item.category);
   });
   renderToDOM('#add-button', filterBtnString);
 };

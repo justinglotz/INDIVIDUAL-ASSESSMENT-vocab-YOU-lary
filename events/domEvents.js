@@ -27,7 +27,13 @@ const domEvents = (user) => {
     // Click event for copying an entry
     if (e.target.id.includes('copy-entry-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleEntry(firebaseKey).then((payload) => createEntry(payload));
+      getSingleEntry(firebaseKey).then((payload) => {
+        const modifiedPayload = {
+          ...payload,
+          uid: `${user.uid}`,
+        };
+        createEntry(modifiedPayload);
+      });
     }
 
     // Click event for filter buttons
