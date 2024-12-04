@@ -3,32 +3,29 @@
 
 An app where users can create different vocabulary entries and categories
 
-[View App](#https://stunning-cupcake-ad077a.netlify.app/)
+[View App](https://stunning-cupcake-ad077a.netlify.app/)
 
 ## About the User <!-- This is a scaled down user persona -->
-- The ideal user for this application is a teacher
-- They have students in their classrooms that they would like to put into random groups and they have a love and passion of Harry Potter
-- The problem this app solves for them is it allows them to get their students involved and excited about being in random groups. The students have felt that the groups have not been so random and based on favorites.
+- The ideal user for this application is someone who needs to remember or study terms and definitions
+- This app allows the user to view and manipulate vocabulary cards and categories to be able to study with
 
 ## Features <!-- List your app features using bullets! Do NOT use a paragraph. No one will read that! -->
-- When a new student is added an object should be created and that object should be pushed into an array of students that then prints to the DOM.
-- House Colors: The color of the student's card changes depending on which house they were sorted.
-- Card Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
-- Voldermort's Army: Create a separate container of cards that hold the cards for students that have been expelled. These should be styled differently from Hogwarts students.
+- User can add a new vocab entry, including a term, definition, and category. Each entry is then shown on the DOM.
+- User is able to filter through categories on each of their cards and only show cards that fit that category.
+- User is able to create a new category, and that category is added to the list of category filter buttons at the top of the page.
+- User can make their entry public or private, if the entry is public, any user will be able to see it on the "community" tab.
+- Users will be able to copy public entries to their own entries page, shown under "My Entries".
 
 ## Video Walkthrough of APP NAME <!-- A loom link is sufficient -->
-https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
+
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
 - [Check out the deployed site](https://stunning-cupcake-ad077a.netlify.app/)
 - [Wireframes](#your-link)
-- [Project Board](#https://github.com/users/justinglotz/projects/4)
-
-## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
-PLACE CODE SNIPPET HERE
+- [Project Board](https://github.com/users/justinglotz/projects/4)
 
 ## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
 <img width="1148" alt="Your Alt" src="your-link.png">
 
 ## Contributors
-- [YOUR NAME](https://github.com/your-github-url)
+- [Justin Glotzbach]([https://github.com/your-github-url](https://github.com/justinglotz))
