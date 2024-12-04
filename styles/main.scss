@@ -3,10 +3,11 @@
 
 
 body {
-  background-color: #232323;
+  background-color: #003049;
   color: brown;
   text-align: center;
   margin-top: 100px;
+  font-family: "Edu SA Beginner";
 }
 
 #store {
@@ -19,6 +20,48 @@ body {
 
   .card {
     width: 300px;
-    margin: 5px;
+    margin: 5px;  
+    background-color: #FCBF49;
   }
+  a {
+    color: #E8E3C3;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+    font-weight: bolder;
+  }
+
+  
+}
+
+.btn-success {
+  background-color: #003049;
+  border: 1px solid #003049;
+}
+.btn-primary {
+  background-color: #003049;
+  border: 1px solid #FCBF49;
+}
+.btn-success:hover, .btn-primary:hover {
+  background-color: #FCBF49;
+  color: #003049;
+  border: 1px solid #FCBF49;
+}
+
+nav {
+  color: #002539;
+  background-color: #002539;
+}
+
+label {
+  color: #FCBF49;
+}
+
+#text {
+  background-color: #FCBF49;
+}
+
+.category {
+  color: #D62828;
 }
