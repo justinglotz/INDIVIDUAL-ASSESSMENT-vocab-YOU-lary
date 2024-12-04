@@ -20,7 +20,7 @@ An app where users can create different vocabulary entries and categories
 https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
-- [Check out the deployed site](#https://stunning-cupcake-ad077a.netlify.app/)
+- [Check out the deployed site](https://stunning-cupcake-ad077a.netlify.app/)
 - [Wireframes](#your-link)
 - [Project Board](#https://github.com/users/justinglotz/projects/4)
 
